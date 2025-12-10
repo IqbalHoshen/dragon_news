@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  padding: 16px;
+}
+a.active {
+  text-decoration: underline;
+}
+
+.mainTitle h1 {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-base-200);
+}
