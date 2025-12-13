@@ -4,9 +4,6 @@
   flex-direction: column;
   padding: 16px;
 }
-a.active {
-  text-decoration: underline;
-}
 
 .mainTitle h1 {
   font-weight: 600;

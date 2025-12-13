@@ -9,7 +9,6 @@
   default: true;
   --color-primary: #706f6f;
   --color-secondary: #403f3f;
-
   --color-base-100: #f3f3f3;
   --color-base-200: #403f3f;
   --color-base-300: #e7e7e7;
@@ -21,6 +20,9 @@
 * {
   font-family: "Poppins", sans-serif;
   font-style: normal;
+}
+a.active {
+  @apply bg-base-300;
 }
 body {
   background-color: #ffffff;

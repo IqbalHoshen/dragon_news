@@ -10,11 +10,13 @@ const Categories = () => {
 
   return (
     <div>
-      <h1>All Caterogy {categories.length}</h1>
-      <div className="grid grid-cols-1 mt-2">
+      <h1>All Caterogy </h1>
+      <div className="grid grid-cols-1 mt-2 gap-2 ">
         {categories.map((categorie) => (
           <NavLink
-            className={"btn bg-white border-0 hover:bg-base-300"}
+            className={
+              "btn bg-white border-0 shadow-none hover:bg-base-300 font-semibold text-primary"
+            }
             key={categorie.id}
             to={`/categorie/${categorie.id}`}
           >
