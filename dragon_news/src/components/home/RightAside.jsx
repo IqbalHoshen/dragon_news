@@ -1,19 +1,15 @@
-import { FcGoogle } from "react-icons/fc";
-import { ImGithub } from "react-icons/im";
-const btnBase = "btn btn-outline w-full";
+import FindUs from "./FindUs";
+import QZone from "./QZone";
+import SocialMedia from "./SocialMedia";
 
 const RightAside = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       <h1>Login With</h1>
-      <div className="space-y-2 mt-3">
-        <button className={`btn-info ${btnBase}`}>
-          <FcGoogle size={24} />
-          <span>Login With Google</span>
-        </button>
-        <button className={`btn-neutral ${btnBase}`}>
-          <ImGithub size={24} /> <span>Login With Github</span>
-        </button>
+      <div className="space-y-5">
+        <SocialMedia></SocialMedia>
+        <FindUs></FindUs>
+        <QZone></QZone>
       </div>
     </div>
   );

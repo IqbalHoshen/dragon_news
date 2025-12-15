@@ -16,7 +16,7 @@ const HomeLayout = () => {
 
       <main className="grid grid-cols-12 gap-4 mainTitle">
         <section className="left_side col-span-3 ">
-          <aside>
+          <aside className="sticky top-5">
             <LeftAside></LeftAside>
           </aside>
         </section>
@@ -25,7 +25,7 @@ const HomeLayout = () => {
         </section>
 
         <section className="right_side col-span-3 ">
-          <aside>
+          <aside className="sticky top-5">
             <RightAside></RightAside>
           </aside>
         </section>

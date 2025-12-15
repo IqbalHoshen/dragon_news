@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { BsPersonCircle } from "react-icons/bs";
 
 const Navbar = () => {
@@ -23,9 +23,13 @@ const Navbar = () => {
 
       <div className="navbar-end gap-3">
         <BsPersonCircle size={32} />
-        <button className="btn bg-base-200 text-white text-xl font-semibold rounded-xs w-28">
+
+        <Link
+          to="/auth/login"
+          className="btn bg-base-200 text-white text-xl font-semibold rounded-xs w-28"
+        >
           Login
-        </button>
+        </Link>
       </div>
     </div>
   );
