@@ -1,9 +1,7 @@
+import { Navigate } from "react-router";
+
 const HomePage = () => {
-  return (
-    <div>
-      <h1>Dragon News Home</h1>
-    </div>
-  );
+  return <Navigate to="/categorie/1"></Navigate>;
 };
 
 export default HomePage;

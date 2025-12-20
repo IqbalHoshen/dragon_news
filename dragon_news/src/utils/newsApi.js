@@ -8,7 +8,7 @@ export const newsApi = async (url) => {
 
     return await res.json();
   } catch (error) {
-    console.error("API Error:", error);
+    e.error("API Error:", error);
     throw error;
   }
 };

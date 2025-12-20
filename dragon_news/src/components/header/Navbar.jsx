@@ -1,12 +1,22 @@
 import { Link, NavLink } from "react-router";
-import { BsPersonCircle } from "react-icons/bs";
+import { use } from "react";
+import { AuthContext } from "../../context/createContext";
+import person from "../../assets/user.png";
 
 const Navbar = () => {
+  const { user, logout } = use(AuthContext);
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+        console.log("success!!!");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="navbar  ">
-      <div className="navbar-start">
-        <div></div>{" "}
-      </div>
+      <div className="navbar-start"></div>
       <div className="navbar-center hidden lg:flex text-primary text-xl font-normal">
         <ul className="menu menu-horizontal px-1">
           <li>
@@ -22,14 +32,27 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end gap-3">
-        <BsPersonCircle size={32} />
+        <img
+          className="w-10 rounded-full"
+          src={`${user?.photoURL || person}`}
+          alt=""
+        />
 
-        <Link
-          to="/auth/login"
-          className="btn bg-base-200 text-white text-xl font-semibold rounded-xs w-28"
-        >
-          Login
-        </Link>
+        {user ? (
+          <button
+            onClick={handleLogout}
+            className="btn bg-base-200 text-white text-xl font-semibold rounded-xs w-28"
+          >
+            Logout
+          </button>
+        ) : (
+          <Link
+            to="/auth/login"
+            className="btn bg-base-200 text-white text-xl font-semibold rounded-xs w-28"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

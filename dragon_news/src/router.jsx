@@ -5,6 +5,9 @@ import Categorie from "./components/home/Categorie";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import AuthLayout from "./components/layout/AuthLayout";
+import NewsDetails from "./components/home/NewsDetails";
+import PrivateRouter from "./components/layout/PrivateRouter";
+import Loader from "./components/layout/Loader";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +19,7 @@ const router = createBrowserRouter([
         path: "/categorie/:id",
         element: <Categorie></Categorie>,
         loader: () => fetch("/demo-data/news.json"),
+        hydrateFallbackElement: <Loader></Loader>,
       },
     ],
   },
@@ -29,9 +33,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/auth/register",
-        element: <Register> </Register>,
+        element: <Register></Register>,
       },
     ],
+  },
+  {
+    path: "/news-details/:id",
+    element: (
+      <PrivateRouter>
+        <NewsDetails></NewsDetails>
+      </PrivateRouter>
+    ),
+    loader: () => fetch("/demo-data/news.json"),
+    hydrateFallbackElement: <Loader></Loader>,
+  },
+  {
+    path: "/*",
+    element: <h1>Error 404</h1>,
   },
 ]);
 export default router;

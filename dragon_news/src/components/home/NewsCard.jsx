@@ -1,9 +1,11 @@
 import { CiBookmark } from "react-icons/ci";
 import { FaEye, FaStar } from "react-icons/fa";
 import { IoShareSocialOutline } from "react-icons/io5";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
-  const { title, rating, total_view, author, thumbnail_url, details } = news;
+  const { id, title, rating, total_view, author, thumbnail_url, details } =
+    news;
 
   return (
     <div className="card shadow-md rounded-xl overflow-hidden mb-5">
@@ -38,16 +40,20 @@ const NewsCard = ({ news }) => {
         <img
           src={thumbnail_url}
           alt={title}
-          className="rounded-xl w-full h-56 object-cover"
+          className="rounded-xl w-full  object-cover"
         />
       </figure>
 
       {/* Details */}
       <div className="px-4 py-3 text-[16px] font-normal ">
         <p className=" text-[#706F6F] line-clamp-3">{details}</p>
-        <button className="mt-2 font-semibold bg-gradient-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent">
+
+        <Link
+          to={`/news-details/${id}`}
+          className="mt-2 font-semibold bg-gradient-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent"
+        >
           Read More
-        </button>
+        </Link>
         <div className="w-full border-t border-base-300 mt-3"></div>
       </div>
 
