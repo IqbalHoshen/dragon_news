@@ -1,11 +1,10 @@
 import { format } from "date-fns";
 import "../../cssStyle/style.css";
+import logo from "../../assets/logo.png";
 const Header = () => {
-  // const dayName =
-
   return (
     <div className="header text-center">
-      <img src="/src/assets/logo.png" alt="image" />
+      <img src={logo} alt="image" />
 
       <h3 className=" text-xl font-normal text-primary mt-3">
         Journalism Without Fear or Favour

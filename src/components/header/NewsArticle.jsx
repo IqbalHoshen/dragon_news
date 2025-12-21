@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 import { useFetch } from "../../hooks/useFetch";
 
 const NewsArticle = () => {
-  const { data, loading, error } = useFetch("/demo-data/news.json");
+  const { data, loading, error } = useFetch("/news.json");
   const newsTitles = data?.map((item) => item.title) || [];
 
   return (
